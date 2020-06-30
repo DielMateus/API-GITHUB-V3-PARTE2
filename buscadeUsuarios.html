@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+              crossorigin="anonymous">
+        <title>Busca de Usuários</title>
+    </head>
+    <body>
+        <div class="container">
+            <form id="form" autocomplete="off">
+                <h1 style="text-align: center;">Github - Contributors e Issues</h1>
+                <!--<div class="form-group">
+                   <input type="text" id="username" placeholder="UserName" class="form-control ml-4">
+               </div>
+              <div class="form-group">
+                   <button class="btn btn-danger ml-4">Search</button>
+               </div>
+                -->
+            </form>
+            <div id="result">
+                <div class="col-12 col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body" id="repositorio">
+                            <img id="imagemRepo" src=""/>
+                            <h5 class="card-title" id="fullname"></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--  <h3>Issues in Repo</h3>
+              <table class="table table-striped">
+                  <thead>
+                      <tr>
+                          <th scope="col">Issue #</th>
+                          <th scope="col">Title</th>
+                          <th scope="col">Created</th>
+                          <th scope="col">State</th>
+                      </tr>
+                  </thead>
+                  <tbody id="output-element">
+                  </tbody>
+              </table>
+            -->
+
+
+            <!-- COMEÇA AQUI O CÓDIGO-->
+
+            <div class="container-fluid">
+                <h2>Issues do repositório</h2>
+                <div class="row">
+                    <div id="accordion">
+                        <div class="card">
+                            <div class="card-header" id="aberto">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link" data-toggle="collapse" data-target="#iaberto" aria-expanded="true" aria-controls="aberto" onclick="issuesAberto(this)">
+                                        ISSUES ABERTO
+                                    </button>
+                                </h5>
+                            </div>
+
+                            <div id="iaberto" class="collapse" aria-labelledby="aberto" data-parent="#accordion">
+                                <div class="card-body" id="issuesAberto">
+
+                                </div>
+                            </div>
+
+
+<!--
+
+                            <h3>Comentários das issues</h3>
+                            <table class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">html_url</th>
+                                        <th scope="col">Body</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="comments">
+                                </tbody>
+                            </table>
+
+
+-->
+
+
+
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="fechado">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#ifechado" aria-expanded="false" aria-controls="fechado" onclick="issuesFechado(this)">
+                                        ISSUES FECHADO
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="ifechado" class="collapse" aria-labelledby="fechado" data-parent="#accordion">
+                                <div class="card-body" id="issuesFechado">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--COMEÇAS OS CONTRINUTORS -->
+            <h2>Contribuições do repositório</h2>
+            <div class="container-fluid">
+                <div id="accordion">
+                    <div class="card">
+                        <div class="card-header" id="headingOne">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" onclick="acima100(this)">
+                                    Contribuições acima de 100
+                                </button>
+                            </h5>
+                        </div>
+
+                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                            <div class="row" id="acima100">
+                                <!-- Contribuidores acima de 100 -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" onclick="acima200(this)">
+                                Contribuições acima de 200
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="row" id="acima200">
+                            <!-- Contribuidores acima de 200 e menor que 500-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                        <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" onclick="acima500(this)">
+                            Contribuições acima de 500
+                        </button>
+                    </h5>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                    <div class="row" id="acima500">
+                        <!-- Contribuidores acima de 500-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--TERMINIA AQUI O CÓDIGO -->
+
+
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+crossorigin="anonymous"></script>
+<script src="js/funcaoUsuarios.js"></script>
+<script src="js/issuesRepo.js"></script>
+<script src="js/comentarios.js"></script>
+<script src="js/comentariosIsuues.js"></script>
+</body>
+</html>
