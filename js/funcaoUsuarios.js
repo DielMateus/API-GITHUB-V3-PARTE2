@@ -1,4 +1,3 @@
-
 let dadosArquivados = JSON.parse(sessionStorage.getItem('chave'));
 let url = 'https://api.github.com/repos/' + dadosArquivados;
 console.log(url);
