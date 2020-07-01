@@ -151,4 +151,3 @@ function commentIssues(url2, number2) {
         }
     });
 }
-
