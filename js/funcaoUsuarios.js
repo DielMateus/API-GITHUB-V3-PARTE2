@@ -102,7 +102,8 @@ function issuesAberto(element) {
             $.each(data, function (index, value) {
                 var issuesAberto = `${value.state}`;
                 if (issuesAberto = 'open') {
-                    statusHtml += `<p><a href="" value="${value.number}" onclick="return commentIssues(${value.number})">${value.title}</a></p>`;
+                    statusHtml += `<p><a href="javascript:commentIssues('${value.url}','${value.number}')" value="${value.number}">${value.title}</a></p>`;
+                    statusHtml += `<p id=comments-${value.number}></p>`;
                 }
             });
             $('#issuesAberto').html(statusHtml);
@@ -129,27 +130,25 @@ function issuesFechado(element) {
     });
 }
 
-function commentIssues(element) {
-    //linha que pega o valor do nome para passar para o link abaixo
-    debugger;
-    var numero = element;
-    let dadosArquivados = JSON.parse(sessionStorage.getItem('chave'));
-
-
-    let url = 'https://api.github.com/repos/' + dadosArquivados + '/issues/' + numero + '/comments';
+function commentIssues(url2, number2) {
+    let url = url2 + '/comments';
+    let number = number2;
     $.ajax({
         type: 'GET',
         url: url,
         success: function (data) {
-            var dados = JSON.stringify(valor);
-            sessionStorage.setItem('number', dados);
-            window.location.replace("comments.html");
+            //var dados = JSON.stringify(valor);
+            //sessionStorage.setItem('number', dados);
+            //window.location.replace("comments.html");
             var statusHTML = '';
             $.each(data, function (i, status) {
-
-                statusHTML += `<p>'+status.body+'</p>`;
+                console.log(status.body);
+                statusHTML += "<p>" + status.body + "</p>";
             });
-            $('#result').html(statusHtml);
+            console.log(statusHTML);
+            console.log('#comments-' + number);
+            $('#comments-' + number).html(statusHTML);
         }
     });
 }
+
