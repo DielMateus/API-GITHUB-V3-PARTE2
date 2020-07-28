@@ -1,7 +1,7 @@
 # API-GITHUB-V3-PARTE2.io
 Consumo de dados da API do GitHub v3
 
-https://dielmateus.github.io/API-GITHUB-V3-PARTE2.io/
+Acesse a aplicação através do: https://dielmateus.github.io/API-GITHUB-V3-PARTE2.io/
 
 
 Consuma a API de repositórios do github: https://developer.github.com/v3
