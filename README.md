@@ -9,6 +9,7 @@ Liste os repositórios com algum componente do Bootstrap de sua preferência.
 Ao selecionar um repositório, traga as informações separadas em subseções:
 
 ● Contributors;
+
 ● Issues;
 
 Exiba até 20 contributors que devem ser categorizados por números de contribuição
@@ -23,6 +24,7 @@ do código, boas práticas utilizadas e a separação de responsabilidade de có
 disso, a capacidade de diagramar uma tela HTML utilizando Bootstrap.
 
 Requisitos obrigatórios:
+
 ● Link do repositório no github;
 
 ● Separar camada de HTML da camada de JS;
